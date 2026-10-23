@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QuickFind | Online Shopping</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" data-page="home">QuickFind</a>
+    <div class="header-actions">
+      <button class="text-button" id="loginBtn">Login/SignUp</button>
+      <button class="text-button cart-shortcut" data-page="cart">Cart <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page active" id="home">
+      <div class="search-band"><input id="homeSearch" type="search" placeholder="Search Products by Name, Id" aria-label="Search products"></div>
+      <section class="sale-banner"><strong>GREAT INDIAN SALE</strong><span>is live now!!</span></section>
+      <section class="categories">
+        <button class="category" data-search="Lenovo"><span class="art"><img class="product-img" src="images/lenovo-loq.png" alt="Lenovo LOQ 15" onerror="handleImgError(this,'laptop')"></span><span>Lenovo LOQ 15</span></button>
+        <button class="category" data-search="Motorola"><span class="art"><img class="product-img" src="images/motorola-g18.png" alt="Motorola / Samsung" onerror="handleImgError(this,'phone')"></span><span>Motorola G18</span></button>
+        <button class="category" data-search="HP"><span class="art"><img class="product-img" src="images/hp-pavilion.png" alt="HP Pavilion" onerror="handleImgError(this,'orange')"></span><span>HP Pavilion</span></button>
+      </section>
+      <section class="content-section">
+        <h2>Great Deals on Earphones</h2>
+        <div class="deal-grid">
+          <article class="deal-card"><span class="art"><img class="product-img" src="images/boat-headphones.png" alt="Boat Headphones" onerror="handleImgError(this,'headphones')"></span><strong>Boat Headphones</strong><small>Rs.4,999.00</small><button class="outline-button" data-add="3">Add to Cart</button></article>
+          <article class="deal-card"><span class="art"><img class="product-img" src="images/boat-headphones.png" alt="Boat Headphones" onerror="handleImgError(this,'headphones')"></span><strong>Boat Headphones</strong><small>Rs.4,999.00</small><button class="outline-button" data-add="3">Add to Cart</button></article>
+          <article class="deal-card"><span class="art"><img class="product-img" src="images/boat-headphones.png" alt="Boat Headphones" onerror="handleImgError(this,'headphones')"></span><strong>Boat Headphones</strong><small>Rs.4,999.00</small><button class="outline-button" data-add="3">Add to Cart</button></article>
+        </div>
+        <button class="explore-button" data-page="products">Explore More Deals →</button>
+      </section>
+    </section>
+
+    <section class="page" id="products">
+      <div class="search-band"><input id="productSearch" type="search" placeholder="Search Products by Name, Id" aria-label="Search products"></div>
+      <section class="content-section listing">
+        <button class="back-button" data-page="home">← Back</button>
+        <h2>Products</h2>
+        <div class="product-grid" id="productGrid"></div>
+      </section>
+    </section>
+
+    <section class="page" id="details">
+      <section class="content-section details-layout">
+        <button class="back-button" data-page="products">← Back</button>
+        <div class="details-grid">
+          <div class="detail-image" id="detailImage"></div>
+          <div class="detail-copy">
+            <h1 id="detailName"></h1>
+            <del id="detailOldPrice"></del>
+            <div class="detail-price" id="detailPrice"></div>
+            <p class="stock">Only 3 left in Stock!</p>
+            <aside class="spec-box"><strong>Other Specs</strong><p id="detailSpecs"></p></aside>
+            <button class="primary-button wide" id="buyNow">Buy Now</button>
+            <button class="outline-button wide" id="addDetailCart">Add to Cart</button>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="page" id="cart">
+      <section class="content-section cart-page">
+        <button class="back-button" data-page="products">← Back</button>
+        <h1>Your Cart</h1>
+        <div id="cartItems"></div>
+        <div id="cartSummary"></div>
+      </section>
+    </section>
+
+    <section class="page" id="orders">
+      <section class="content-section orders-page" id="ordersContent"></section>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+  <footer class="bottom-nav">
+    <button class="active" data-page="home">Home</button>
+    <button data-page="products">Products</button>
+    <button data-page="cart">Cart</button>
+    <button data-page="orders">Orders</button>
+  </footer>
+  <dialog id="loginDialog"><form method="dialog" class="login-form"><button class="dialog-close" aria-label="Close">×</button><h2>Welcome to QuickFind</h2><label>Email<input type="email" placeholder="you@example.com" required></label><label>Password<input type="password" placeholder="Password" required></label><button class="primary-button">Sign In</button><p>This is a frontend demo; authentication is not connected.</p></form></dialog>
+</body>
+</html>
